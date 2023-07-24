@@ -1,8 +1,8 @@
 const express = require("express");
 const http = require("http");
 const { mongoDBConnection } = require("./connection/databaseConnection");
-const userRouter = require("./routes/user");
-const productRoute = require("./routes/product")
+const userRouter = require("./server/routes/user");
+const productRoute = require("./server/routes/product")
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const globalErrorHandler = require("./middleware/globalMiddlewareHandler.js")

@@ -1,5 +1,5 @@
-const ErrorHandler = require("../utils/errorHandler");
-const Products = require("../models/products");
+const ErrorHandler = require("../server/utils/errorHandler");
+const Products = require("../server/models/products");
 const cloudinary = require("../../config/cloudinaryConfig")
 
 // guest and suers : get all products
