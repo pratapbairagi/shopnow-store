@@ -1,6 +1,6 @@
 const ErrorHandler = require("../utils/errorHandler");
 const Products = require("../models/products");
-const cloudinary = require("../../config/cloudinaryConfig")
+const cloudinary = require("../config/cloudinaryConfig")
 
 // guest and suers : get all products
 exports.get_products = async (req, res, next) => {

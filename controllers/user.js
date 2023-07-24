@@ -1,5 +1,5 @@
 const userModel = require("../models/users");
-const cloudinary = require("../../config/cloudinaryConfig");
+const cloudinary = require("../config/cloudinaryConfig");
 const ErrorHandler = require("../utils/errorHandler");
 
 

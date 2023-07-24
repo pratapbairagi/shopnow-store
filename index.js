@@ -23,7 +23,7 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(cors({
     credentials : true,
     // origin : "http://localhost:3000"
-    origin : ["https://shopnow-ruby.vercel.app", "http://localhost:3000"]
+    origin : ["https://shopnow-ruby.vercel.app", process.env.FRONTEND_URL]
 }));
 
 if (process.env.NODE_ENV === 'production') {
@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
   }
 
 app.options("/", (req, res, next)=>{
-    res.setHeader("Access-control-allow-origin", "http://localhost:3000");
+    res.setHeader("Access-control-allow-origin", process.env.FRONTEND_URL);
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     res.setHeader("Access-Control-Max-Age", "3600");
     res.setHeader("Access-Control-Allow-Headers","Content-Type, Accept, X-Requested-With, Authorization");
@@ -47,7 +47,7 @@ app.use("/website_ecommerce/app/api", productRoute);
 
 app.use(globalErrorHandler)
 
-mongoDBConnection("mongodb+srv://website_ecommerce:18May1994@cluster0.5qgqh.mongodb.net/website_ecommerce?retryWrites=true&w=majority")
+mongoDBConnection(process.env.MONGO_DB_CONNECTION_URL)
 
 app.listen(PORT, () => {
     console.log(`server running on http://localhost:${PORT}`)
