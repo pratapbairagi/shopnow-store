@@ -1,5 +1,5 @@
 const express = require("express");
-const { create_product, get_product, get_products, delete_product, edit_product } = require("../../controllers/product");
+const { create_product, get_product, get_products, delete_product, edit_product } = require("../controllers/product");
 const userAuth = require("../server/middleware/userAuth");
 const userRole = require("../server/middleware/userRole");
 

@@ -1,5 +1,5 @@
 
-const ErrorHandler = require("../server/utils/errorHandler")
+const ErrorHandler = require("../utils/errorHandler")
 
 module.exports = (role) => {
 
