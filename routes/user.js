@@ -1,7 +1,7 @@
 const express = require("express");
 const { user_register, user_login, user_logged, user_logout, user_update, getAllUsers, get_single_user, admin_update_user } = require("../server/controllers/user");
-const userAuth = require("../server/middleware/userAuth");
-const userRole = require("../server/middleware/userRole");
+const userAuth = require("../middleware/userAuth");
+const userRole = require("../middleware/userRole");
 
 const userRouter = express();
 

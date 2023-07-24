@@ -5,7 +5,7 @@ const userRouter = require("./routes/user");
 const productRoute = require("./routes/product")
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const globalErrorHandler = require("./middleware/globalMiddlewareHandler.js")
+const globalErrorHandler = require("./middleware/globalMiddlewareHandler")
 const bodyparser = require("body-parser")
 
 
