@@ -12,7 +12,7 @@ const bodyparser = require("body-parser")
 const app = express(http);
 const PORT = process.env.PORT || 5544;
 
-// require("dotenv").config({path : "server/config/.env"})
+require("dotenv").config({path : "config/.env"})
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true, limit: "25mb" }));
@@ -25,6 +25,13 @@ app.use(cors({
     // origin : "http://localhost:3000"
     origin : ["https://shopnow-ruby.vercel.app", "http://localhost:3000"]
 }));
+
+if (process.env.NODE_ENV === 'production') {
+    //*Set static folder up in production
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  }
 
 app.options("/", (req, res, next)=>{
     res.setHeader("Access-control-allow-origin", "http://localhost:3000");
