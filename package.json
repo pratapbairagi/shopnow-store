@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "server with bode and express, and databse with mongoDb",
   "main": "index.js",
-  "engines": {
-    "node" : "^14.13.0"
-  },
+  "engines": { "node": "14.13.0", "npm": "9.5.0" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
@@ -30,7 +28,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.1",
     "nodemon": "^3.0.1",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "sass": "^1.64.1"
